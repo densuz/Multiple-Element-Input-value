@@ -1,0 +1,40 @@
+<div class="card">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <table class="table" id="dynamic-table">
+                                            <tbody id="row-template">
+                                                <tr>
+                                                    <td>
+                                                        <div id="username_search_div">
+                                                            <select class="choices multiple-remove" name="user_id[]">
+                                                                @foreach ($users as $user)
+                                                                    <option value="{{ $user->id }}">
+                                                                        {{ $user->username }} - {{ $user->name }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div id="dokumen_search_div">
+                                                            <select class="choices multiple-remove" name="dokumen_list[]">
+                                                                @foreach ($dokumenlist as $list)
+                                                                    <option value="{{ $list->id }}">
+                                                                        {{ $list->namafile }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary btn-sm btnadd" id="btnaddrow" onclick="addRow()">+</button>
+                                                        <button type="button" class="btn btn-danger btn-sm btndelete " id="btndelete" onclick="removeRow(this)">x</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
